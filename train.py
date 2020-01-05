@@ -1,3 +1,7 @@
+#https://www.tensorflow.org/tutorials/keras/classification
+# 
+# 
+ 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 # TensorFlow and tf.keras
@@ -70,4 +74,29 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(train_images, train_labels, epochs=10)
+model.fit(train_images, train_labels, epochs=15)
+
+
+test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
+
+print('\nTest accuracy:', test_acc)
+
+input()
+
+
+
+# # Grab an image from the test dataset.
+# img = test_images[1]
+
+# print(img.shape)
+
+# # Add the image to a batch where it's the only member.
+# img = (np.expand_dims(img,0))
+
+# print(img.shape)
+
+# predictions_single = model.predict(img)
+
+# print(predictions_single)
+
+# np.argmax(predictions_single[0])
